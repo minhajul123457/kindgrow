@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to Your Local Amazon Store</title>
+    <script>
+      const countryAmazonMap = {
+        "US": "https://amazon.com/dp/B0FF3C8HHH",
+        "GB": "https://amazon.co.uk/dp/B0FF3C8HHH",
+        "IN": "https://amazon.in/dp/B0FF3C8HHH",
+        "CA": "https://amazon.ca/dp/B0FF3C8HHH",
+        "AU": "https://amazon.com.au/dp/B0FF3C8HHH",
+        "DE": "https://amazon.de/dp/B0FF3C8HHH",
+        "FR": "https://amazon.fr/dp/B0FF3C8HHH",
+        "IT": "https://amazon.it/dp/B0FF3C8HHH",
+        "ES": "https://amazon.es/dp/B0FF3C8HHH",
+        "NL": "https://amazon.nl/dp/B0FF3C8HHH",
+        "JP": "https://amazon.co.jp/dp/B0FF3C8HHH",
+        "BR": "https://amazon.com.br/dp/B0FF3C8HHH",
+        "MX": "https://amazon.com.mx/dp/B0FF3C8HHH",
+        "AE": "https://amazon.ae/dp/B0FF3C8HHH",
+        "SA": "https://amazon.sa/dp/B0FF3C8HHH",
+        "TR": "https://amazon.com.tr/dp/B0FF3C8HHH",
+        "SG": "https://amazon.sg/dp/B0FF3C8HHH",
+        "SE": "https://amazon.se/dp/B0FF3C8HHH",
+        "PL": "https://amazon.pl/dp/B0FF3C8HHH",
+        "BE": "https://amazon.com.be/dp/B0FF3C8HHH",
+      };
+
+      fetch("https://ipapi.co/json/")
+        .then(res => res.json())
+        .then(data => {
+          const countryCode = data.country_code;
+          const amazonLink = countryAmazonMap[countryCode] || "https://www.amazon.com/dp/B0FF3C8HHH";
+          window.location.href = amazonLink;
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting you to your local Amazon store...</p>
+</body>
+</html>
