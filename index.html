@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Redirecting to Your Local Amazon Store</title>
+  <head>
+    <title>Redirecting to your Amazon Store...</title>
     <script>
-      const countryAmazonMap = {
-        "US": "https://amazon.com/dp/B0FF3C8HHH",
-        "GB": "https://amazon.co.uk/dp/B0FF3C8HHH",
-        "IN": "https://amazon.in/dp/B0FF3C8HHH",
-        "CA": "https://amazon.ca/dp/B0FF3C8HHH",
-        "AU": "https://amazon.com.au/dp/B0FF3C8HHH",
-        "DE": "https://amazon.de/dp/B0FF3C8HHH",
-        "FR": "https://amazon.fr/dp/B0FF3C8HHH",
-        "IT": "https://amazon.it/dp/B0FF3C8HHH",
-        "ES": "https://amazon.es/dp/B0FF3C8HHH",
-        "NL": "https://amazon.nl/dp/B0FF3C8HHH",
-        "JP": "https://amazon.co.jp/dp/B0FF3C8HHH",
-        "BR": "https://amazon.com.br/dp/B0FF3C8HHH",
-        "MX": "https://amazon.com.mx/dp/B0FF3C8HHH",
-        "AE": "https://amazon.ae/dp/B0FF3C8HHH",
-        "SA": "https://amazon.sa/dp/B0FF3C8HHH",
-        "TR": "https://amazon.com.tr/dp/B0FF3C8HHH",
-        "SG": "https://amazon.sg/dp/B0FF3C8HHH",
-        "SE": "https://amazon.se/dp/B0FF3C8HHH",
-        "PL": "https://amazon.pl/dp/B0FF3C8HHH",
-        "BE": "https://amazon.com.be/dp/B0FF3C8HHH",
-      };
+      var lang = navigator.language || navigator.userLanguage;
 
-      fetch("https://ipapi.co/json/")
-        .then(res => res.json())
-        .then(data => {
-          const countryCode = data.country_code;
-          const amazonLink = countryAmazonMap[countryCode] || "https://www.amazon.com/dp/B0FF3C8HHH";
-          window.location.href = amazonLink;
-        });
+      if (lang.includes("IN")) {
+        window.location.href = "https://www.amazon.in/dp/B0FF3C8HHH";
+      } else if (lang.includes("US") || lang.includes("en-US")) {
+        window.location.href = "https://www.amazon.com/dp/B0FF3C8HHH";
+      } else if (lang.includes("UK") || lang.includes("GB") || lang.includes("en-GB")) {
+        window.location.href = "https://www.amazon.co.uk/dp/B0FF3C8HHH";
+      } else if (lang.includes("FR") || lang.includes("fr-FR")) {
+        window.location.href = "https://www.amazon.fr/dp/B0FF3C8HHH";
+      } else if (lang.includes("CA") || lang.includes("en-CA")) {
+        window.location.href = "https://www.amazon.ca/dp/B0FF3C8HHH";
+      } else if (lang.includes("DE") || lang.includes("de-DE")) {
+        window.location.href = "https://www.amazon.de/dp/B0FF3C8HHH";
+      } else if (lang.includes("JP") || lang.includes("ja-JP")) {
+        window.location.href = "https://www.amazon.co.jp/dp/B0FF3C8HHH";
+      } else if (lang.includes("AU") || lang.includes("en-AU")) {
+        window.location.href = "https://www.amazon.com.au/dp/B0FF3C8HHH";
+      } else if (lang.includes("IT") || lang.includes("it-IT")) {
+        window.location.href = "https://www.amazon.it/dp/B0FF3C8HHH";
+      } else if (lang.includes("ES") || lang.includes("es-ES")) {
+        window.location.href = "https://www.amazon.es/dp/B0FF3C8HHH";
+      } else if (lang.includes("NL") || lang.includes("nl-NL")) {
+        window.location.href = "https://www.amazon.nl/dp/B0FF3C8HHH";
+      } else if (lang.includes("BR") || lang.includes("pt-BR")) {
+        window.location.href = "https://www.amazon.com.br/dp/B0FF3C8HHH";
+      } else if (lang.includes("MX") || lang.includes("es-MX")) {
+        window.location.href = "https://www.amazon.com.mx/dp/B0FF3C8HHH";
+      } else if (lang.includes("PL") || lang.includes("pl-PL")) {
+        window.location.href = "https://www.amazon.pl/dp/B0FF3C8HHH";
+      } else if (lang.includes("SE") || lang.includes("sv-SE")) {
+        window.location.href = "https://www.amazon.se/dp/B0FF3C8HHH";
+      } else {
+        window.location.href = "https://www.amazon.com/dp/B0FF3C8HHH";
+      }
     </script>
-</head>
-<body>
-    <p>Redirecting you to your local Amazon store...</p>
-</body>
+  </head>
+  <body>
+    <p>Redirecting to your nearest Amazon store...</p>
+  </body>
 </html>
